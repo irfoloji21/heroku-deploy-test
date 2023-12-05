@@ -1,0 +1,136 @@
+
+
+    <div class="container">
+        <div class="checkout-page">
+            <div class="checkout-form">
+                <form  [formGroup]="checkoutForm">
+                    <div class="row d-flex">
+                      <div class="col-lg-12 col-sm-12">
+                        <!-- <br><br><br>
+                        <div class="checkout-summary">
+                          <div class="summary-area js-checkout-sum" >
+                            <div >
+                              <div class="summary-header">
+                                ORDER SUMMARY
+                              </div>
+                              <div class="item-area" *ngFor="let product of orderDetails">
+                                <div class="summary-item">
+                                  <div class="item-header">
+                                    <a class="product-img-link-wrapper" href="/product/129861">
+                                      <img [src]="product.images[0].url" alt="" class="img-fluid">
+                                    </a>
+                                    <a class="product-name-link-wrapper" href="/product/129861">
+                                      <p>{{product.description}}</p>
+                                      <span>Product Code: HF2479P</span>
+                                      <span>Size: 26, Quantity: {{product.quantity}}</span>
+                                    </a>
+                                  </div>
+                                  <div class="item-body">
+                                    <span class="campaign"></span>
+                                    <span class="retail_price"><s>{{product.originalPrice | currency}}</s></span>&nbsp;
+                                    <span class="price">{{product.discountPrice | currency}}</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="summary-tab hidden">
+                                <span><em class="icon-club"></em>Mese Soft</span>
+                                <em class="icon-plus"></em>
+                              </div>
+                              <div class="summary-content">
+                                <div class="subtotal-area">
+                                  <div class="subtotal product-price">
+                                    <div>Total for Products</div>
+                                    <div>$699.00</div>
+                                  </div>
+                                  <div class="subtotal campaign hide"></div>
+                                  <div class="subtotal campaign ">
+                                    <div>Shipping Fee (Standard Shipping)</div>
+                                    <div class="cargoPrice" >+34.90 TL</div>
+                                  </div>
+                                  <div class="subtotal campaign ">
+                                    <div>Coupon (Standard Coupon)</div>
+                                    <div class="cargoPrice" >-69,8 TL</div>
+                                  </div>
+                                </div>
+                                <div class="subtotal-area">
+                                  <div class="subtotal total">
+                                    <div >Total:</div>
+                                    <div class="totalPrice px-1">$664,1</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                                     </div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="checkout-details">
+                                <div class="credit-card-form">
+                                    <label for="card-number">Card Number</label>
+                                    <input formControlName="cardNumber" type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                    
+                                    <label for="expiration-date">Expiration Date</label>
+                                    <div class="expiration-date">
+                                      <select id="card-month" formControlName="expirationMonth" required>
+                                        <option value="" disabled selected>Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <!-- Diğer ayları da ekleyin -->
+                                      </select>
+                                      <select id="card-year" formControlName="expirationYear">
+                                        <option value="" disabled selected>Year</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                         <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2031">2031</option>
+                                        <option value="2032">2032</option>
+                                        <option value="2033">2033</option>
+                                        <option value="2034">2034</option>
+                                        <!-- Diğer yılları da ekleyin -->
+                                      </select>
+                                    </div>
+                                  
+                                    <label for="cvv">CVV</label>
+                                    <input formControlName="cvv" type="text" id="cvv" placeholder="123" required>
+
+                                    <div class="terms-and-conditions">
+                                        <input formControlName="termsCheckbox"   type="checkbox" id="terms-checkbox">
+                                        <label for="terms-checkbox">I have read and accept the <a href="#">Terms and Conditions</a></label>
+                                      </div>
+                                      
+                                  </div>
+                                  
+                                    <div  class="order-image" > 
+                                     <img src="../../../../../assets/images/stripe.jpg"
+                                      alt="photo">
+                                    </div>
+
+                                    <div class="text-end">
+                                         <button type="submit" class="btn-solid btn"  (click)="stripeCheckout()" >
+                                           Place Order
+                                        </button> 
+                                        <!-- <ngx-paypal [config]="payPalConfig" *ngIf="payment == 'Paypal'"></ngx-paypal> -->
+                                    </div>                                
+                            </div>
+                        </div>
+                          
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,208 @@
+<app-header-four [sticky]="true"></app-header-four>
+
+<!-- Home slider start-->
+<section class="p-0">
+  <app-slider
+    [sliders]="sliders"
+    [textClass]="'text-center'"
+    [category]="'fashion'"
+    [buttonText]="'shop now'"
+  >
+  </app-slider>
+</section>
+<!-- Home slider End -->
+
+<!-- collection banner start-->
+<div class="col-md-12 d-flex" >
+  <div class="container">
+    <div class="row">
+      <section class="pb-0" style="cursor: pointer;">
+        <div class="container">
+          <div class="row partition2 d-flex flex-wrap">
+            <div class="col-md-6 d-flex">
+              <a  (click)="loadDataMen()">
+                <div class="collection-banner p-right text-center flex-grow-1">
+                  <img style="height: 351px; width: 664px;"
+                    src="../../../../assets/images/man0.webp"
+                    class="img-fluid"
+                    alt="collection-banner"
+                  />
+                  <div class="contain-banner">
+                    <div>
+                      <h4>discounts of up to 50%</h4>
+                      <h2>Men</h2>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-6 d-flex">
+              <a  (click)="loadDataWoman()">
+                <div class="collection-banner p-right text-center flex-grow-1">
+                  <img style="height: 351px; width: 664px;"
+                    src="../../../../assets/images/Women0.jpg"
+                    class="img-fluid"
+                    alt="collection-banner"
+                  />
+                  <div class="contain-banner">
+                    <div>
+                      <h4>discounts of up to 50%</h4>
+                      <h2>Women</h2>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- collection banner End -->
+
+<!-- Product slider start-->
+<div class="title1 section-t-space">
+  <h4>special offer</h4>
+  <h2 class="title-inner1">top collection</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
+          nostrum provident eos voluptates ducimus perspiciatis dolores
+          reiciendis architecto in. Nulla.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section-b-space p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <owl-carousel-o
+          class="product-m no-arrow"
+          [options]="ProductSliderConfig"
+        >
+          <ng-container *ngFor="let product of sortedProducts | slice : 0 : 10">
+            <ng-template carouselSlide>
+              <div class="product-box">
+                <app-product-box-one
+                  [product]="product"
+                  [loader]="true"
+                  [currency]="productService?.Currency"
+                  [thumbnail]="true"
+                  [cartModal]="true"
+                >
+                </app-product-box-one>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product slider End -->
+
+<!-- Parallax banner start-->
+<section class="p-0">
+  <div style="cursor: pointer;"
+    class="full-banner parallax-banner1 parallax text-center p-left"
+    [ngStyle]="{ 'background-image': 'url(assets/images/TrendPhoto.jpeg)' }"
+  >
+    <div class="container"> 
+      <div class="row">
+        <div class="col">
+          <div class="banner-contain">
+            <h2>2023</h2>
+            <h3>fashion trends</h3>
+            <h4>special offer</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Parallax banner End -->
+
+<!-- Tab product start-->
+<!-- <div class="title1 section-t-space">
+  <h4>exclusive products</h4>
+  <h2 class="title-inner1">special products</h2>
+</div>
+<section class="section-b-space p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col theme-tab">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="tabs tab-title justify-content-center nav nav-pills" >
+          <li *ngFor="let collection of productCollections" [ngbNavItem]="collection">
+            <a ngbNavLink>
+               {{ collection }}
+            </a>
+            <ng-template ngbNavContent>
+              <div class="no-slider row">
+                  <ng-container *ngFor="let product of getCollectionProducts(collection) | slice:0:8">
+                      <div class="product-box">
+                          <app-product-box-one [product]="product" [currency]="productService?.Currency">
+                          </app-product-box-one>
+                      </div>
+                  </ng-container>
+              </div>
+            </ng-template>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Tab product End -->
+
+<!-- services start-->
+<div class="container">
+  <section class="service border-section small-section">
+    <app-services></app-services>
+  </section>
+</div>
+<!-- services End -->
+
+<!-- blog section start-->
+<section class="blog p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title1 section-t-space">
+          <h4>Recent Story</h4>
+          <h2 class="title-inner1">from the blog</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-blog [blogs]="blog"></app-blog>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- blog section End -->
+
+<!--  logo section start-->
+<section class="section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-logo [logos]="logo"></app-logo>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  logo section End-->
+
+<app-newsletter></app-newsletter>
+<app-footer-one></app-footer-one>
