@@ -9,7 +9,7 @@ const cors = require("cors");
 // Sadece test için kullanılmalıdır. 
 // ilerleyen zamanlarda değiştirilmelidir. öpüldünüz...
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:4200' ,'https://multikart-0899da497ec4.herokuapp.com'],
+  origin: ['http://localhost:3000', 'https://admin-multikart-5ccc1ae02ffd.herokuapp.com' ,'https://multikart-0899da497ec4.herokuapp.com'],
   credentials: true
 }));
 
